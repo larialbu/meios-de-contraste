@@ -6,49 +6,69 @@
   <title>Jogo da Memória - Contraste Iodado vs Gadolínio</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
+
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #f5f5f5;
+      background: linear-gradient(135deg, rgba(162, 194, 232, 0.8), rgba(242, 244, 248, 0.8)), url('https://images.unsplash.com/photo-1543852786-1c120f8d4c7e') no-repeat center center fixed;
+      background-size: cover;
+      padding: 20px;
     }
+
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 1000px;
     }
+
     h1 {
       margin-bottom: 20px;
+      color: #333;
     }
+
     .instructions {
       margin-bottom: 20px;
       text-align: center;
+      color: #555;
     }
+
     .game-board {
       display: flex;
       justify-content: space-between;
-      width: 80%;
+      width: 100%;
     }
+
     .board {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 45%;
     }
+
     .options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       margin-bottom: 20px;
+      width: 100%;
     }
+
     .card {
       width: 100%;
       padding: 10px;
@@ -59,16 +79,23 @@
       border: 2px solid #ddd;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
     }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
     .card.correct {
       background-color: #a8e6cf;
       border-color: #34a853;
     }
+
     .card.incorrect {
       background-color: #ff8a80;
       border-color: #ea4335;
     }
+
     .drop-zone {
       width: 100%;
       height: auto; 
@@ -78,15 +105,23 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       padding: 50px;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, transform 0.3s;
     }
+
+    .drop-zone:hover {
+      transform: scale(1.02);
+    }
+
     .drop-zone.drag-over {
       border-color: #aaa;
     }
+
     .result {
       margin-top: 20px;
       font-size: 1.2rem;
+      color: #333;
     }
+
     .button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -98,17 +133,20 @@
       border-radius: 5px;
       transition: background-color 0.3s;
     }
+
     .button:hover {
       background-color: #0056b3;
     }
+
     .hidden {
       display: none;
     }
-    .buttonss{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
+
+    .buttonss {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
     }
   </style>
 </head>

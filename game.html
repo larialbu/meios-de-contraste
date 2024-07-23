@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória - Contraste Iodado vs Gadolínio</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .instructions {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .game-board {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+    .board {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 45%;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .card {
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .card.correct {
+      background-color: #a8e6cf;
+      border-color: #34a853;
+    }
+    .card.incorrect {
+      background-color: #ff8a80;
+      border-color: #ea4335;
+    }
+    .drop-zone {
+      width: 100%;
+      height: 100px; /* Altura inicial padrão */
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+      transition: border-color 0.3s;
+      overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    .drop-zone.drag-over {
+      border-color: #aaa;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+    .buttonss{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo da Memória - Contraste Iodado vs Gadolínio</h1>
+    <p class="instructions">Arraste as informações corretas até seus respectivos meios de contraste.</p>
+    <div class="options">
+      <div class="card" draggable="true" id="card1" data-answer="iodado">Precisa de Acesso Calibroso (18-20)</div>
+      <div class="card" draggable="true" id="card2" data-answer="gadolinio">Não requer aquecimento para administração</div>
+      <div class="card" draggable="true" id="card3" data-answer="gadolinio">Não precisa de acesso calibroso</div>
+      <div class="card" draggable="true" id="card4" data-answer="iodado">Tem maior risco de reação Adversa</div>
+      <div class="card" draggable="true" id="card5" data-answer="iodado">Tem potencial nefrotóxico</div>
+      <div class="card" draggable="true" id="card6" data-answer="iodado">É Utilizado na Tomografia Computadorizada</div>
+      <div class="card" draggable="true" id="card7" data-answer="gadolinio">É Utilizado na Ressonância Magnética</div>
+      <div class="card" draggable="true" id="card8" data-answer="iodado">Deve ser aquecido a temperatura corporal (36°c)</div>
+      <div class="card" draggable="true" id="card9" data-answer="iodado">Sua alta Osmolaridade está relacionada a efeitos adversos</div>
+      <div class="card" draggable="true" id="card10" data-answer="gadolinio">Não é nefrotóxico</div>
+    </div>
+    <div class="game-board">
+      <div class="board">
+        <h2>Iodado</h2>
+        <div id="iodado" class="drop-zone"></div>
+      </div>
+      <div class="board">
+        <h2>Gadolínio</h2>
+        <div id="gadolinio" class="drop-zone"></div>
+      </div>
+    </div>
+    <div class="buttonss">
+        <button class="button" id="submit">Enviar</button>
+        <button class="button" id="back">Voltar</button>
+    </div>
+    <button class="button hidden" id="retry">Tentar Novamente</button>
+    <p id="result" class="result"></p>
+  </div>
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const dropZones = document.querySelectorAll('.drop-zone');
+    const submitButton = document.getElementById('submit');
+    const retryButton = document.getElementById('retry');
+    const backButton = document.getElementById('back');
+    const resultElement = document.getElementById('result');
+
+    cards.forEach(card => {
+      card.addEventListener('dragstart', dragStart);
+    });
+
+    dropZones.forEach(zone => {
+      zone.addEventListener('dragover', dragOver);
+      zone.addEventListener('drop', drop);
+    });
+
+    submitButton.addEventListener('click', checkAnswers);
+    retryButton.addEventListener('click', resetGame);
+    backButton.addEventListener('click', goBack);
+
+    function dragStart(e) {
+      e.dataTransfer.setData('text', e.target.id);
+    }
+
+    function dragOver(e) {
+      e.preventDefault();
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      const cardId = e.dataTransfer.getData('text');
+      const card = document.getElementById(cardId);
+      e.currentTarget.appendChild(card);
+      card.style.display = 'block';
+    }
+
+    function checkAnswers() {
+      const iodadoZone = document.getElementById('iodado');
+      const gadolinioZone = document.getElementById('gadolinio');
+
+      let correctAnswers = 0;
+
+      iodadoZone.querySelectorAll('.card').forEach(card => {
+        if (card.dataset.answer === 'iodado') {
+          card.classList.add('correct');
+          correctAnswers++;
+        } else {
+          card.classList.add('incorrect');
+        }
+      });
+
+      gadolinioZone.querySelectorAll('.card').forEach(card => {
+        if (card.dataset.answer === 'gadolinio') {
+          card.classList.add('correct');
+          correctAnswers++;
+        } else {
+          card.classList.add('incorrect');
+        }
+      });
+
+      displayResult(correctAnswers);
+      retryButton.classList.remove('hidden'); 
+    }
+
+    function displayResult(correctAnswers) {
+      let resultText = '';
+      if (correctAnswers === 10) {
+        resultText = 'EXCELENTE!!! Parabéns, você é um profissional diferenciado, parabéns!';
+      } else if (correctAnswers >= 8) {
+        resultText = 'Você é ótimo nesse assunto!!';
+      } else if (correctAnswers > 5) {
+        resultText = 'Muito bom, mas o que você acha de enriquecer um pouco mais seus conhecimentos?';
+      } else {
+        resultText = 'Poxa, você precisa de mais atenção. Que tal tentar novamente?';
+      }
+      resultElement.textContent = resultText;
+    }
+
+    function resetGame() {
+      const options = document.querySelector('.options');
+      cards.forEach(card => {
+        options.appendChild(card);
+        card.classList.remove('correct', 'incorrect');
+        card.style.display = 'flex';
+      });
+
+      resultElement.textContent = '';
+
+      retryButton.classList.add('hidden');
+    }
+
+    function goBack() {
+      window.location.href = 'index.html'; 
+    }
+  </script>
+</body>
+</html>

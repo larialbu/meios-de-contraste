@@ -7,6 +7,44 @@
     <title>Meios de Contraste: Gadolínio vs Iodado</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+         .section__text__p1 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .experience-details-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .container-button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .icon {
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    </style>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -16,6 +54,7 @@
           <li><a href="#about">Introdução</a></li>
           <li><a href="#experience">Comparação</a></li>
           <li><a href="#projects">Imagens</a></li>
+          <li><a href="game.html">Game</a></li>
           <li><a href="#contact">Sobre o Residente</a></li>
         </ul>
       </div>
@@ -32,6 +71,7 @@
           <li><a href="#about" onclick="toggleMenu()">Introdução</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Comparação</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Imagens</a></li>
+          <li><a href="game.html" onclick="toggleMenu()">Game</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Sobre o Residente</a></li>
         </div>
       </div>
@@ -45,12 +85,12 @@
         <h1 class="title" >Informativo sobre Meios de Contraste</h1>
         <p class="section__text__p2" >Gadolínio vs Iodado</p>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/contraste.pdf')">
-            Baixar PDF
+          <button class="btn btn-color-2">
+            <a href="https://www.canva.com/design/DAGKexzGPvk/thsrH_FY3UWncmNsRzhyDA/view?utm_content=DAGKexzGPvk&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+              Baixar PDF
+            </a>
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contato
-          </button>
+         
         </div>
       </div>
     </section>
@@ -81,72 +121,114 @@
           </div>
         </div>
       </div>
+      
       <img src="./assets/arrow.png" alt="Ícone de seta" class="icon arrow" onclick="location.href='./#experience'" />
     </section>
     <section id="experience">
       <p class="section__text__p1">Comparação</p>
-      <h1 class="title">Gadolínio vs Iodado</h1>
+      <h1 class="title">QR Code 1</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container" >
-            <h2 class="experience-sub-title" >Gadolínio</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Utilização</h3>
-                  <p>Ressonância Magnética</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Vantagens</h3>
-                  <p>Melhor contraste em tecidos moles</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Desvantagens</h3>
-                  <p>Risco de fibrose sistêmica nefrogênica em pacientes com insuficiência renal</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container" >
-            <h2 class="experience-sub-title" >Iodado</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Utilização</h3>
-                  <p>Tomografia Computadorizada, Radiografia</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Vantagens</h3>
-                  <p>Melhor visualização de vasos sanguíneos</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Ícone de verificação" class="icon" />
-                <div>
-                  <h3>Desvantagens</h3>
-                  <p>Risco de reações alérgicas e nefrotoxicidade</p>
-                </div>
-              </article>
-            </div>
-          </div>
+          <table>
+            <caption class="highlight">Classificação da Severidade das Reações, Adaptada da Escala de Ring e Messmer</caption>
+            <thead>
+              <tr>
+                <th>Grau</th>
+                <th>Pele</th>
+                <th>Gastrointestinal</th>
+                <th>Respiratório</th>
+                <th>Cardiovascular</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I</td>
+                <td>Prurido<br>Rubor<br>Urticária<br>Angioedema</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>II</td>
+                <td>Prurido<br>Rubor<br>Urticária<br>Angioedema</td>
+                <td>Náuseas<br>Cólicas</td>
+                <td>Rinorreia<br>Rouquidão<br>Dispneia</td>
+                <td>Taquicardia<br>Hipotensão<br>Arritmia</td>
+              </tr>
+              <tr>
+                <td>III</td>
+                <td>Prurido<br>Rubor<br>Urticária<br>Angioedema</td>
+                <td>Vômitos<br>Diarreia</td>
+                <td>Edema laríngeo<br>Broncoespasmo<br>Cianose</td>
+                <td>Choque</td>
+              </tr>
+              <tr>
+                <td>IV</td>
+                <td>Prurido<br>Rubor<br>Urticária<br>Angioedema</td>
+                <td>Vômitos<br>Diarreia</td>
+                <td>Parada respiratória</td>
+                <td>Parada cardíaca</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+          <p>
+            <b  class="highlight">Quanto ao Substrato Fisiopatológico (Fisiopatogenia):</b><br>
+            <b>Pode Apresentar Reações de não hipersensibilidade</b> (ou também denominadas de
+            fisiológicas, tóxicas, não anafilactoides, não pseudoalérgicas);<br>
+          <b>Ou Reações de hipersensibilidade</b> (ou também denominadas de pseudoalérgicas,
+            anafilactoides ou idiossincráticas).<br>
+            Sucintamente, as reações de não hipersensibilidade são aquelas relacionadas a eventos
+            fisiológicos e/ou tóxicos desencadeados pela toxicidade farmacológica do meio de
+            contraste, e as reações de hipersensibilidade são aquelas imunomediadas, que apresentam
+            sintomas semelhantes às reações alérgicas.
+          </p>
+        <br><br>
+
+
+        <table>
+          <caption class="highlight">Classificação e Mecanismos Envolvidos nas Reações Adversas não Renais aos Meios de Contraste (MC)</caption>
+          <tr>
+              <th>Classificação quanto à temporalidade</th>
+              <th>Classificação quanto à fisiopatogenia</th>
+              <th>Mecanismo fisiopatogênico</th>
+              <th>Manifestação clínica</th>
+          </tr>
+          <tr>
+              <td rowspan="2">Aguda (< 1 hora)</td>
+              <td>Reações de não hipersensibilidade</td>
+              <td>Eventos fisiológicos e/ou tóxicos desencadeados pelas propriedades do MC</td>
+              <td>Dependente do órgão-alvo</td>
+          </tr>
+          <tr>
+              <td>Reações de hipersensibilidade</td>
+              <td>Não alérgico ou IgE-imunomediada</td>
+              <td>Semelhante à alergia / anafilaxia</td>
+          </tr>
+          <tr>
+              <td>Tardia (1 hora – 7 dias)</td>
+              <td>Reações de hipersensibilidade</td>
+              <td>Célula T-imunomediada</td>
+              <td>Reação cutânea (exantema maculopapular)</td>
+          </tr>
+          <tr>
+              <td rowspan="2">Muito tardia (> 7 dias)</td>
+              <td colspan="2"></td>
+              <td>Tireotoxicose (MC iodado)</td>
+          </tr>
+          <tr>
+              <td colspan="2"></td>
+              <td>Fibrose sistêmica nefrogênica (MC à base de gadolínio)</td>
+          </tr>
+      </table>
+        <p>(Dutra, 2020)</p>
       </div>
       <img src="./assets/arrow.png" alt="Ícone de seta" class="icon arrow" onclick="location.href='./#projects'" />
     </section>
+   
     <section id="projects">
-      <p class="section__text__p1">Exemplos Visuais</p>
-      <h1 class="title">Imagens</h1>
+      <p class="section__text__p1">AUDIOVISUAL</p>
+      <h1 class="title">QR Code 2</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
@@ -171,19 +253,38 @@
       </div>
       <img src="./assets/arrow.png" alt="Ícone de seta" class="icon arrow" onclick="location.href='./#contact'" />
     </section>
+
+      <section id="projects">
+        <p class="section__text__p1">Meios de Contraste à Base de Gadólínio - Capítulo 2</p>
+        <h1 class="title">QR Code 4</h1>
+        <div class="experience-details-container">
+          <p>O Capítulo 2 do livro "Meios de Contraste à Base de Gadólínio" aborda os seguintes pontos principais:</p>
+          <ul>
+            <strong>Composição Química:</strong> Explica a composição química dos meios de contraste à base de gadólínio, detalhando como o gadólínio é utilizado para melhorar o contraste nas imagens de ressonância magnética. <br>
+            <strong>Mecanismo de Ação:</strong> Descreve o mecanismo de ação dos meios de contraste, incluindo como o gadólínio altera o sinal na ressonância magnética para proporcionar imagens mais detalhadas. <br>
+            <strong>Tipos de Meios de Contraste:</strong> Discussão sobre os diferentes tipos de meios de contraste gadolíneos, como os de alta e baixa osmolaridade, e suas respectivas aplicações clínicas. <br>
+            <strong>Segurança e Efeitos Colaterais:</strong> Aborda as questões de segurança associadas ao uso de gadólínio, incluindo possíveis efeitos colaterais e precauções a serem tomadas. <br>
+            <strong>Considerações Clínicas:</strong> Inclui informações sobre como escolher o meio de contraste adequado para diferentes condições e situações clínicas. <br>
+          </ul>
+          <div class="container-button">
+  
+            <button class="button" onclick="window.open('https://manual.spr.org.br/meios-de-contraste/meios-de-contraste-completo.pdf#page=35', '_blank')">Ver Capítulo 2 Completo</button>
+          </div>
+        </div>
+      </section>
+
     <section id="contact">
       <p class="section__text__p1">Sobre o Residente</p>
       <h1 class="title">Contato</h1>
       <div class="resident-info-container">
         <h2>Jessica Freitas</h2>
-        <p>Residente em Radiologia no Hospital XYZ</p>
-        <p>Especializada em meios de contraste e diagnósticos por imagem.</p>
-        <p>Telefone: (81) 1234-5678</p>
+        <p>Residente de enfermagem em Diagnóstico por Imagem no Hospital da Restauração</p>
+        <p>Especializada em Diagnósticos por Imagem.</p>
         <div class="contact-info-container">
           <img src="./assets/email.png" alt="Ícone de email" class="icon contact-icon email-icon" />
-          <p><a href="mailto:exemplo@gmail.com">exemplo@gmail.com</a></p>
-          <img src="./assets/linkedin.png" alt="Ícone do LinkedIn" class="icon contact-icon" />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+          <p><a href="mailto:jessicagosmes.freitas@upe.br">jessicagosmes.freitas@upe.br</a></p>
+          <!-- <img src="./assets/linkedin.png" alt="Ícone do LinkedIn" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com">LinkedIn</a></p> -->
         </div>
       </div>
     </section>
@@ -194,6 +295,7 @@
             <li><a href="#about">Introdução</a></li>
             <li><a href="#experience">Comparação</a></li>
             <li><a href="#projects">Imagens</a></li>
+            <li><a href="game.html">Game</a></li>
             <li><a href="#contact">Sobre o Residente</a></li>
           </ul>
         </div>

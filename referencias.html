@@ -19,11 +19,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(135deg, #a2c2e8, #f2f4f8);
       background-size: 400% 400%;
       animation: gradientAnimation 15s ease infinite;
       padding: 20px;
+      overflow-x: hidden; /* Adiciona overflow-x hidden no body para evitar rolagem horizontal indesejada */
     }
 
     @keyframes gradientAnimation {
@@ -33,11 +34,13 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 100%;
+      width: 800px; /* Limita a largura máxima para grandes telas */
       background: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow-x: auto; /* Adiciona rolagem horizontal quando necessário */
     }
 
     h1 {
@@ -48,6 +51,11 @@
 
     .reference {
       margin-bottom: 15px;
+    }
+
+    .reference p {
+      margin: 0; /* Remove margem padrão do parágrafo */
+      word-wrap: break-word; /* Garante que o texto se ajuste à largura da tela */
     }
 
     .reference a {

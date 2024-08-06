@@ -296,6 +296,17 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  overflow-y: auto;
+
+  iframe{
+    width: 600px;
+     height: 315px;
+     
+     @media (max-width: 768px) {
+      width: 300px;
+      height: 315px;
+    }
+  }
 }
 
 .about-details-container {

@@ -133,7 +133,6 @@ section {
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
-  overflow-y: auto;
 }
 
 .section-container {
@@ -265,6 +264,7 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+   overflow-y: auto;
 
   iframe{
     width: 600px;

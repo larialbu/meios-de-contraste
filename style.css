@@ -67,10 +67,6 @@ a:hover {
 }
 /* MENU HAMBÚRGUER */
 
-#hamburger-nav {
-  display: none;
-}
-
 .hamburger-menu {
   position: relative;
   display: inline-block;
@@ -101,11 +97,15 @@ a:hover {
   right: 0;
   background-color: white;
   width: 200px;
-  max-height: 0;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease-in-out;
   border-radius: 8px;
+  max-height: 0; /* Inicialmente escondido */
+}
+
+.menu-links.open {
+  max-height: 800px; /* Ajuste conforme o conteúdo */
 }
 
 .menu-links a {
@@ -126,38 +126,6 @@ a:hover {
   list-style: none;
 }
 
-.menu-links.open {
-  max-height: 400px;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.hamburger-icon.open {
-  transform: rotate(90deg);
-}
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
 /* SECTIONS */
 
 section {
@@ -296,7 +264,6 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  overflow-y: auto;
 
   iframe{
     width: 600px;
@@ -449,7 +416,7 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
+  height: 6vh;
   margin: 0 1rem;
 }
 
@@ -480,4 +447,35 @@ table th {
 .nav-links-container{
   padding-top: 30px;
   padding-bottom: 20px;
+}
+
+/* Estilo do texto principal */
+.section__text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Títulos */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Estilo da legenda da imagem */
+.image-caption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Link estilizado */
+a {
+  color: #0056b3;
+  text-decoration: underline;
+  font-weight: bold;
 }

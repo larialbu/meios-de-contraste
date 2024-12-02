@@ -44,23 +44,17 @@
       cursor: pointer;
       margin-top: 20px;
     }
+
+.section__text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify; /* Texto alinhado justificado */
+}
+
+
     </style>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Meios de Contraste</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">Introdução</a></li>
-          <li><a href="#experience">QR Code 1</a></li>
-          <li><a href="#audiovisual">QR Code 2</a></li>
-          <li><a href="game.html">Game (QR Code 3)</a></li>
-          <li><a href="#projects">QR Code 4</a></li>
-          <li><a href="referencias.html">QR Code 5</a></li>
-          <li><a href="#contact">Sobre a Residente</a></li>
-        </ul>
-      </div>
-    </nav>
     <nav id="hamburger-nav">
       <div class="logo">Meios de Contraste</div>
       <div class="hamburger-menu">
@@ -70,16 +64,26 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">Introdução</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">QR Code 1</a></li>
-          <li><a href="#audiovisual" onclick="toggleMenu()">QR Code 2</a></li>
-          <li><a href="game.html" onclick="toggleMenu()">Game (QR Code 3)</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">QR Code 4</a></li>
-          <li><a href="referencias.html" onclick="toggleMenu()">QR Code 5</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Sobre a Residente</a></li>
+          <ul>
+            <li><a href="#pre-medicacao" onclick="toggleMenu()">Pré-Medicação</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experiência</a></li>
+            <li><a href="#gfr-calculator" onclick="toggleMenu()">GFR Calculator</a></li>
+            <li><a href="#metformina-recomendacoes" onclick="toggleMenu()">Metformina Recomendações</a></li>
+            <li><a href="#extravasamento-contraste" onclick="toggleMenu()">Extravasamento de Contraste</a></li>
+            <li><a href="#audiovisual" onclick="toggleMenu()">Audiovisual</a></li>
+            <li><a href="game.html" onclick="toggleMenu()">Game</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projetos</a></li>
+            <li><a href="#gestacao" onclick="toggleMenu()">Gestação</a></li>
+            <li><a href="#lactacao" onclick="toggleMenu()">Lactação</a></li>
+            <li><a href="referencias.html" onclick="toggleMenu()">Referências</a></li>
+          </ul>
         </div>
       </div>
     </nav>
+    
+
+    
+    
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/tomografia.png" alt="Imagem ilustrativa" />
@@ -126,9 +130,100 @@
         </div>
       </div>
     </section>
+
+    <section id="pre-medicacao">
+      <p class="section__text__p1">Esquemas de Pré-Medicação</p>
+      <h1 class="title">QR Code 1</h1>
+      <div class="experience-details-container">
+    
+        <!-- Tabela 1 -->
+        <div class="about-containers">
+          <table>
+            <caption class="highlight">Tabela 1. Esquema de pré-medicação (Greenberger). Prednisona e difenidramina.</caption>
+            <thead>
+              <tr>
+                <th>Droga</th>
+                <th>Período</th>
+                <th>Dosagem Pediátrica</th>
+                <th>Adulto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Prednisona</td>
+                <td>13, 7 e 1 hora antes do exame</td>
+                <td>0,5-0,7mg/Kg via oral (até 50mg)</td>
+                <td>50mg via oral</td>
+              </tr>
+              <tr>
+                <td>Difenidramina</td>
+                <td>1 hora antes do exame</td>
+                <td>1,25mg/Kg via oral (até 50mg)</td>
+                <td>50mg via oral</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Tabela 2 -->
+        <div class="about-containers">
+          <table>
+            <caption class="highlight">Tabela 2. Esquema de pré-medicação. Metilprednisolona e difenidramina.</caption>
+            <thead>
+              <tr>
+                <th>Droga</th>
+                <th>Período</th>
+                <th>Adulto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Metilprednisolona</td>
+                <td>12 e 2 horas antes do exame</td>
+                <td>32mg via oral</td>
+              </tr>
+              <tr>
+                <td>Difenidramina</td>
+                <td>1 hora antes do exame</td>
+                <td>50mg via oral, IM ou IV</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Tabela 3 -->
+        <div class="about-containers">
+          <table>
+            <caption class="highlight">Tabela 3. Esquema de pré-medicação injetável.</caption>
+            <thead>
+              <tr>
+                <th>Droga</th>
+                <th>Período</th>
+                <th>Adulto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Succinato sódico de metilprednisolona ou succinato sódico de hidrocortisona</td>
+                <td>1 hora antes do exame</td>
+                <td>40 mg IV ou 200 mg IV</td>
+              </tr>
+              <tr>
+                <td>Difenidramina</td>
+                <td>1 hora antes do exame</td>
+                <td>50 mg IV</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-source">Fonte: adaptada no Manual on Contrast Media - ACR 2023.</p>
+        
+      </div>
+    </section>
+    
     <section id="experience">
       <p class="section__text__p1">Comparação</p>
-      <h1 class="title">QR Code 1</h1>
+      <h1 class="title">QR Code 2</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <table>
@@ -224,14 +319,97 @@
           </tr>
       </table>
       
-        <p>(Dutra, 2020)</p>
+       
     </div>
+    <p>(Dutra, 2020)</p>
+      </div>
+    </section>
+
+    <section id="gfr-calculator">
+      <p class="section__text__p1">Calculadora GFR</p>
+      <h1 class="title">QR Code 3</h1>
+      <div class="experience-details-container">
+        <div  style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <p class="section__text" style="line-height: 1.6; text-align: justify;">
+            Este QR Code direciona para o site da <b>National Kidney Foundation</b>, onde você pode acessar a 
+            calculadora GFR (Taxa de Filtração Glomerular) para avaliação da função renal. Clique no botão abaixo 
+            para acessar:
+          </p>
+          <div style="margin-top: 15px;">
+            <a href="https://www.kidney.org/professionals/gfr_calculator" target="_blank" class="btn">
+              Acessar Calculadora GFR
+            </a>
+          </div>
+        </div>
+        <p class="table-source" style="margin-top: 20px; margin-bottom: 100px;">Fonte: adaptada no Manual on Contrast Media - ACR 2023.</p>
+      </div>
+    </section>
+       
+    <section id="metformina-recomendacoes">
+      <p class="section__text__p1">Recomendações para Pacientes que Fazem Uso de Metformina</p>
+      <h1 class="title">QR Code 4</h1>
+      <div class="experience-details-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <div class="about-containers">
+          <p class="section__text" style="text-align: justify; line-height: 1.6;">
+            ▪ A conduta atual nos casos de pacientes que fazem uso de metformina e precisam utilizar MC iodado por via intravenosa resume-se em (diagrama abaixo):
+            <br><br>
+            ▪ <b>Manter a metformina</b> se a TFGe for maior ou igual a 30 mL/min/1.73m<sup>2</sup>.
+            <br>
+            ▪ <b>Suspender a metformina</b> para pacientes com TFGe menor que 30 mL/min/1.73m<sup>2</sup>, no dia do exame até 48h após o procedimento e somente reintroduzir a droga se não houver alteração da função renal.
+            <br>
+            ▪ <b>Não é necessário suspender</b> a metformina antes do uso de MC à base de Gd.
+          </p>
+          <div style="margin: 20px 0;">
+            <!-- Aqui a imagem será inserida -->
+            <img src="assets/qr4.png" alt="Diagrama explicativo sobre recomendações para o uso de Metformina" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;"/>
+            <p class="image-caption" style="font-size: 14px; color: #666; margin-top: 10px; text-align: justify;">
+              IV: Iodo venoso | IA: Iodo arterial | Exposição renal de 2p: Lesão renal estágio 2 | MC: Meio de Contraste | AKI: Lesão renal aguda | (CBR, 2024)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>  
+    
+    <section id="extravasamento-contraste">
+      <p class="section__text__p1">Extravasamento de Contraste</p>
+      <h1 class="title">QR Code 5</h1>
+      <div  style="max-width: 700px; margin: 0 auto;">
+        <div >
+          <!-- Texto Principal -->
+          <div style="margin-bottom: 20px;">
+            <p class="section__text" style="text-align: justify; line-height: 1.6;">
+              ▪ Extravasamento pode ser uma das complicações observadas com o uso de MC. Na maioria dos casos as alterações são leves, mas lesões graves podem ocorrer como ulceração de pele, necrose de partes moles e síndrome compartimental.
+              <br><br>
+              ▪ Os fatores de risco estão relacionados no quadro abaixo.
+              <br><br>
+              ▪ Para reduzir o risco, recomenda-se técnica intravenosa adequada com o uso de jelco calibroso (18 ou 20), num vaso que possa suportar a velocidade de fluxo durante a injeção, além de teste de injeção com soro fisiológico, utilização de MC não iônico e aquecimento do MC iodado.
+            </p>
+          </div>
+    
+          <!-- Imagem -->
+          <div style="margin-bottom: 20px; text-align: center;">
+            <img src="assets/qr5.png" alt="Fatores de risco para extravasamento de contraste" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;" />
+            <p class="image-caption" style="font-size: 14px; color: #666; margin-top: 10px; text-align: justify;">
+              Legenda: Representação visual dos fatores de risco associados ao extravasamento de contraste (CBR, 2024).
+            </p>
+          </div>
+    
+          <!-- Texto com Link -->
+          <div>
+            <p class="section__text" style="text-align: justify; line-height: 1.6;">
+              Leia na íntegra o capítulo 7 do manual Meio de Contraste: Conceitos e Diretrizes.
+              <a href="https://manual.spr.org.br/2022/meios-de-contraste-cap7/meios-de-contraste-2a-edicao-capitulo7.pdf " target="_blank" style="font-weight: bold; color: #0056b3; text-decoration: underline;">
+                Clique aqui para acessar.
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
    
       <section id="audiovisual">
       <p class="section__text__p1">AUDIOVISUAL</p>
-      <h1 class="title">QR Code 2</h1>
+      <h1 class="title">QR Code 6</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
@@ -241,34 +419,149 @@
       </div>
     </section>
     
-      <section id="projects">
-        <p class="section__text__p1">Meios de Contraste à Base de Gadólínio - Capítulo 2</p>
-        <h1 class="title">QR Code 4</h1>
-        <div class="experience-details-container">
-          <p>O Capítulo 2 do livro "Meios de Contraste à Base de Gadólínio" aborda os seguintes pontos principais:</p>
-          <ul>
-            <strong>Composição Química:</strong> Explica a composição química dos meios de contraste à base de gadólínio, detalhando como o gadólínio é utilizado para melhorar o contraste nas imagens de ressonância magnética. <br>
-            <strong>Mecanismo de Ação:</strong> Descreve o mecanismo de ação dos meios de contraste, incluindo como o gadólínio altera o sinal na ressonância magnética para proporcionar imagens mais detalhadas. <br>
-            <strong>Tipos de Meios de Contraste:</strong> Discussão sobre os diferentes tipos de meios de contraste gadolíneos, como os de alta e baixa osmolaridade, e suas respectivas aplicações clínicas. <br>
-            <strong>Segurança e Efeitos Colaterais:</strong> Aborda as questões de segurança associadas ao uso de gadólínio, incluindo possíveis efeitos colaterais e precauções a serem tomadas. <br>
-            <strong>Considerações Clínicas:</strong> Inclui informações sobre como escolher o meio de contraste adequado para diferentes condições e situações clínicas. <br>
-          </ul>
-          <div class="container-button">
-  
-            <button class="button" onclick="window.open('https://manual.spr.org.br/meios-de-contraste/meios-de-contraste-completo.pdf#page=35', '_blank')">Ver Capítulo 2 Completo</button>
+    <section id="jogo">
+      <p class="section__text__p1">Jogo</p>
+      <h1 class="title">QR Code 7</h1>
+      <div>
+        <div >
+          <div style="text-align: center; margin-top: 20px;">
+            <p style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+              Este QR Code direciona para um jogo interativo. Clique no botão abaixo para acessar e explorar!
+            </p>
+            <a href="game.html" target="_blank" class="button" style="
+              display: inline-block;
+              background-color: #007BFF;
+              color: #fff;
+              padding: 12px 30px;
+              text-decoration: none;
+              border-radius: 5px;
+              font-size: 16px;
+              font-weight: bold;
+              margin: 0 auto;
+              text-align: center;
+            ">
+              Jogar Agora
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    
+    <section id="projects">
+      <p class="section__text__p1">Meios de Contraste à Base de Gadólínio - Capítulo 2</p>
+      <h1 class="title">QR Code 8</h1>
+      <div class="experience-details-container">
+        <p>O Capítulo 2 do livro "Meios de Contraste à Base de Gadólínio" aborda os seguintes pontos principais:</p>
+        <ul>
+          <strong>Composição Química:</strong> Explica a composição química dos meios de contraste à base de gadólínio, detalhando como o gadólínio é utilizado para melhorar o contraste nas imagens de ressonância magnética. <br>
+          <strong>Mecanismo de Ação:</strong> Descreve o mecanismo de ação dos meios de contraste, incluindo como o gadólínio altera o sinal na ressonância magnética para proporcionar imagens mais detalhadas. <br>
+          <strong>Tipos de Meios de Contraste:</strong> Discussão sobre os diferentes tipos de meios de contraste gadolíneos, como os de alta e baixa osmolaridade, e suas respectivas aplicações clínicas. <br>
+          <strong>Segurança e Efeitos Colaterais:</strong> Aborda as questões de segurança associadas ao uso de gadólínio, incluindo possíveis efeitos colaterais e precauções a serem tomadas. <br>
+          <strong>Considerações Clínicas:</strong> Inclui informações sobre como escolher o meio de contraste adequado para diferentes condições e situações clínicas. <br>
+        </ul>
+        <div class="container-button">
 
-    <section id="contact">
-      <p class="section__text__p1">Sobre o Residente</p>
+          <button class="button" onclick="window.open('https://manual.spr.org.br/meios-de-contraste/meios-de-contraste-completo.pdf#page=35', '_blank')">Ver Capítulo 2 Completo</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gestacao">
+      <p class="section__text__p1">Contraste Iodado na Gestação</p>
+      <h1 class="title">QR Code 9</h1>
+      <div class="experience-details-container">
+        <div >
+          <!-- Texto descritivo -->
+          <p class="section__text">
+            Não foram descritos efeitos mutagênicos ou teratogênicos após a administração do meio de contraste iodado durante a gestação, em testes realizados em animais seja in vitro ou in vivo. O principal efeito deletério do meio de contraste iodado é o seu potencial impacto sobre a glândula tireoide durante os períodos fetal e neonatal.
+            A exposição da tireoide ao excesso de iodo desencadeia uma resposta aguda denominada “efeito Wolff-Chaikoff”, descrita inicialmente em 1948 em ratos expostos a quantidades elevadas de iodo e que tiveram uma redução transitória da síntese dos hormônios tireoidianos. Esse mecanismo é parcialmente explicado pela formação de substâncias (iodolactonas, iodoaldeídos e/ou iodolipídios) que inibem a atividade da peroxidase tireoidiana (TPO), necessária para a síntese dos hormônios tireoidianos.
+            Outro mecanismo que pode contribuir no efeito Wolff-Chaikoff é a redução da hidrólise da tireoglobulina com subsequente redução da secreção do hormônio tireoidiano. A tireoide fetal é particularmente sensível à sobrecarga de iodo, pois a habilidade total de escapar do efeito agudo Wolff-Chaikoff só ocorre por volta da 36ª semana de gestação. Apesar disso, alguns pequenos estudos mostraram que não houve aumento significativo da disfunção tireoidiana após o uso de contraste iodado durante a gestação e uma série de casos demonstrou que não houve hipotireoidismo neonatal nessa situação.
+            O hipotireoidismo neonatal e fetal, mesmo transitório, pode ser prejudicial ao desenvolvimento neurológico, existindo então, uma recomendação de controle dos níveis séricos de hormônio estimulador da tireoide (TSH) nas primeiras semanas de vida após a exposição materna ou neonatal pelo meio de contraste iodado. A prematuridade por si só pode aumentar o risco de hipotireoidismo neonatal induzido pelo contraste iodado.
+            Sendo assim, o MC iodado pode ser administrado quando o exame radiográfico for essencial. Após administração do MC iodado, avaliar a função tireoidiana do neonato na 1ª semana de vida.
+          </p>
+          <!-- Imagem (se houver) -->
+          <div class="image-container" style="text-align: center; margin-top: 20px;">
+            <img src="assets/qr9.png" alt="Contraste Iodado na Gestação" style="max-width: 100%; height: auto;">
+          </div>
+          <!-- Fonte/legenda -->
+          <p class="table-source" style="text-align: center; margin-top: 20px;">
+            Legenda: MC - Meio de Contraste, TSH - Hormônio Estimulador da Tireoide. (Dutra,2020; CBR,2024)
+          </p>
+        </div>
+        <!-- Fonte da seção -->
+        <p class="table-source">Fonte: adaptada no Manual on Contrast Media - ACR 2023.</p>
+      </div>
+    </section>
+    
+    <section id="lactacao">
+      <p class="section__text__p1">Meios de Contraste e Lactação</p>
+      <h1 class="title">QR Code 10</h1>
+      <div class="experience-details-container">
+        <div >
+          <!-- Texto descritivo -->
+          <p class="section__text">
+            <b>Meios de Contraste Iodados em Lactantes</b><br>
+            A meia-vida do meio de contraste iodado administrado por via intravenosa é de cerca de duas horas, sendo praticamente 100% eliminado em 24 horas em pacientes com função renal normal. Sabe-se que menos de 1% dos meios de contraste iodados administrados por via intravenosa na lactante são excretados pelo leite materno nas primeiras 24 horas.
+            Além disso, menos que 1% do meio de contraste iodado ingerido pela criança é absorvido pelo trato gastrointestinal do lactente. Portanto, a dose estimada de absorção do meio de contraste iodado pela criança através do leite materno é menor que 0,01% da dose intravascular administrada na mãe, muito abaixo da dose permitida em crianças durante um exame contrastado (geralmente 1,5 a 2 mL/kg).
+            A probabilidade de efeito alérgico ou tóxico direto determinado pela ingesta do meio de contraste iodado é extremamente baixo. Outro ponto a ser lembrado é que pode haver alteração do sabor do leite materno por curto período.
+          </p>
+          <div class="image-container" style="text-align: center; margin-top: 20px;">
+            <img src="assets/qr10.png" alt="Contraste Iodado na Gestação" style="max-width: 100%; height: auto;">
+          </div>
+          <p class="section__text">
+            <b>Meios de Contraste à Base de Gadolínio em Lactantes</b><br>
+            Assim como os meios de contraste iodados, aqueles à base de gadolínio têm meia vida de cerca de duas horas, apresentando eliminação praticamente completa em cerca de 24 horas em pacientes com função renal normal. Menos que 0,04% da dose intravascular administrada na mãe é excretada no leite materno nas primeiras 24 horas.
+            Como menos de 1% do meio de contraste ingerido pela criança é absorvido pelo trato gastrointestinal, a dose absorvida pela criança pelo leite materno é de longe mais baixa do que aquela permitida para administração em neonatos.
+            Não se sabe ao certo a forma em que o meio de contraste à base de gadolínio é excretado no leite materno; porém, é provável que a maior parte seja excretada no leite materno na forma estável de quelato.
+            Outros riscos potenciais seriam a toxicidade direta, incluindo a toxicidade do gadolínio livre (não se sabe quanto ou se há gadolínio livre no leite) e potencial alérgico. Como com o meio de contraste iodado, pode haver alteração do sabor do leite materno.
+          </p>
+          <!-- Fonte/legenda -->
+          <p class="table-source" style="text-align: center; margin-top: 20px;">
+            Fonte: (UEDA,2020)
+          </p>
+        </div>
+        <!-- Fonte da seção -->
+        <p class="table-source">Fonte: adaptada no Manual on Contrast Media - ACR 2023.</p>
+      </div>
+    </section> 
+
+    <section id="referencias">
+      <p class="section__text__p1">Referências</p>
+      <h1 class="title">QR Code 11</h1>
+      <div>
+        <div >
+          <div style="text-align: center; margin-top: 20px;">
+            <p style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+              Este QR Code direciona para as referências. Clique no botão abaixo para acessar e explorar!
+            </p>
+            <a href="referencias.html" target="_blank" class="button" style="
+              display: inline-block;
+              background-color: #007BFF;
+              color: #fff;
+              padding: 12px 30px;
+              text-decoration: none;
+              border-radius: 5px;
+              font-size: 16px;
+              font-weight: bold;
+              margin: 0 auto;
+              text-align: center;
+            ">
+              Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" >
+      <p class="section__text__p1" style="padding-top: 60px;">Sobre o Residente</p>
       <h1 class="title">Contato</h1>
       <div class="resident-info-container">
         <h2>Jessica Freitas</h2>
         <p>Residente de enfermagem em Diagnóstico por Imagem do Hospital da Restauração da</p>
         <p>Universidade de Pernambuco</p>
         <div class="contact-info-container">
-          <img src="./assets/email.png" alt="Ícone de email" class="icon contact-icon email-icon" />
+          <!-- <img src="./assets/email.png" alt="Ícone de email" class="icon contact-icon email-icon" /> -->
           <p><a href="mailto:jessicagosmes.freitas@upe.br">jessicagosmes.freitas@upe.br</a></p>
           <!-- <img src="./assets/linkedin.png" alt="Ícone do LinkedIn" class="icon contact-icon" />
           <p><a href="https://www.linkedin.com">LinkedIn</a></p> -->
@@ -276,19 +569,6 @@
       </div>
     </section>
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">Introdução</a></li>
-            <li><a href="#experience">QR Code 1</a></li>
-            <li><a href="#audiovisual">QR Code 2</a></li>
-            <li><a href="game.html">Game (QR Code 3)</a></li>
-            <li><a href="#projects">QR Code 4</a></li>
-            <li><a href="referencias.html">QR Code 5</a></li>
-            <li><a href="#contact">Sobre a Residente</a></li>
-          </ul>
-        </div>
-      </nav>
       <p>Copyright &#169; 2024 Informativo sobre Meios de Contraste. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
